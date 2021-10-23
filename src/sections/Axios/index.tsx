@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import { getTodos, postTodo, Todos } from './api';
-import TextField from '../components/TextField';
-import Button from '../components/Button';
+import TextField from '../../components/TextField';
+import Button from '../../components/Button';
 
 const Axios = () => {
   const [items, setItems] = useState<Todos>([]);

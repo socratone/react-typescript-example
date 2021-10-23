@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Axios from './Axios';
-import ReactQuery from './ReactQuery';
-import TypeInheritance from './TypeInheritance';
+import Axios from './sections/Axios';
+import ReactQuery from './sections/ReactQuery';
+import TypeInheritance from './sections/TypeInheritance';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();

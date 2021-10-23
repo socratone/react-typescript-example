@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
-import TextField from '../components/TextField';
-import Button from '../components/Button';
+import TextField from '../../components/TextField';
+import Button from '../../components/Button';
 import {
   useDeleteTodoMutation,
   usePostTodoMutation,
