@@ -79,13 +79,17 @@ type DeleteTodoParams = {
   headerParameters?: {};
 };
 
-type DeleteTodoResponseData = {
+export type DeleteTodoResponseData = {
   title: string;
 };
 
 export const deleteTodo = ({ id, headerParameters }: DeleteTodoParams) => {
-  return axios.delete<DeleteTodoResponseData>(URL + '/' + id, {
-    params: {},
-    headers: headerParameters,
-  });
+  return axios
+    .delete<DeleteTodoResponseData>(URL + '/' + id, {
+      params: {},
+      headers: headerParameters,
+    })
+    .then((res) => {
+      return res.data;
+    });
 };
