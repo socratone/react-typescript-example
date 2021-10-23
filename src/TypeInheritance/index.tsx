@@ -25,7 +25,7 @@ const Container = styled.div`
   border-radius: 10px;
 `;
 
-const Title = styled.h2``;
+const Title = styled.h3``;
 
 const Description = styled.p``;
 
