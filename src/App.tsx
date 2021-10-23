@@ -1,19 +1,28 @@
 import styled from 'styled-components';
 import Axios from './Axios';
+import ReactQuery from './ReactQuery';
 import TypeInheritance from './TypeInheritance';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <Container>
-      <SubTitle>타입 상속</SubTitle>
-      <TypeInheritance
-        title="타입스크립트"
-        description="타입스크립트는 재미있다."
-      />
+    <QueryClientProvider client={queryClient}>
+      <Container>
+        <SubTitle>타입 상속</SubTitle>
+        <TypeInheritance
+          title="타입스크립트"
+          description="타입스크립트는 재미있다."
+        />
 
-      <SubTitle>Axios</SubTitle>
-      <Axios />
-    </Container>
+        <SubTitle>Axios</SubTitle>
+        <Axios />
+
+        <SubTitle>React Query</SubTitle>
+        <ReactQuery />
+      </Container>
+    </QueryClientProvider>
   );
 }
 

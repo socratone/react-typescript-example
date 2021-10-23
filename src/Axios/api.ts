@@ -16,15 +16,17 @@ export const getTodos = () => {
   });
 };
 
+export type PostTodoPayload = {
+  title: string;
+};
+
 type PostTodoParams = {
-  payload: {
-    title: string;
-  };
+  payload: PostTodoPayload;
   parameters?: {};
   headerParameters?: {};
 };
 
-type PostTodoResponseData = {
+export type PostTodoResponseData = {
   title: string;
 };
 
