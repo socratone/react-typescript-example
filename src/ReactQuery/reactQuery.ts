@@ -29,7 +29,7 @@ export const usePostTodoMutation = ({
   onSuccess,
 }: UsePostTodoMutationParams) => {
   return useMutation<PostTodoResponseData, AxiosError, PostTodoPayload>(
-    (payload): Promise<any> =>
+    (payload) =>
       postTodo({
         payload,
         parameters: {},
