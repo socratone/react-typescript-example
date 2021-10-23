@@ -2,15 +2,34 @@ import styled from 'styled-components';
 import React, { useState } from 'react';
 import TextField from '../components/TextField';
 import Button from '../components/Button';
-import { usePostTodoMutation, useTodos } from './reactQuery';
+import {
+  useDeleteTodoMutation,
+  usePostTodoMutation,
+  usePutTodoMutation,
+  useTodos,
+} from './reactQuery';
 
 const ReactQuery = () => {
   const { data: todos } = useTodos();
 
-  const { mutate } = usePostTodoMutation({
+  const { mutate: postMutate } = usePostTodoMutation({
     onSuccess: (result) => {
       alert(result.title + '을 저장했습니다.');
       setValue('');
+    },
+    onError: (error) => alert('에러가 발생했습니다.'),
+  });
+
+  const { mutate: putMutate } = usePutTodoMutation({
+    onSuccess: (result) => {
+      alert(result.title + '을 수정했습니다.');
+    },
+    onError: (error) => alert('에러가 발생했습니다.'),
+  });
+
+  const { mutate: deleteMutate } = useDeleteTodoMutation({
+    onSuccess: (result) => {
+      alert(result.title + '을 삭제했습니다.');
     },
     onError: (error) => alert('에러가 발생했습니다.'),
   });
@@ -21,8 +40,21 @@ const ReactQuery = () => {
     setValue(event.target.value);
   };
 
-  const handleClick = () => {
-    mutate({ title: value });
+  const handleClickPost = () => {
+    postMutate({ title: value });
+  };
+
+  const handleClickEdit = () => {
+    putMutate({
+      id: 1,
+      payload: {
+        title: value,
+      },
+    });
+  };
+
+  const handleClickDelete = () => {
+    deleteMutate({ id: 1 });
   };
 
   return (
@@ -33,8 +65,14 @@ const ReactQuery = () => {
       ))}
       <Row>
         <TextField value={value} onChange={handleChange} />
-        <Button onClick={handleClick} style={{ marginLeft: '10px' }}>
+        <Button onClick={handleClickPost} style={{ marginLeft: '10px' }}>
           저장
+        </Button>
+        <Button onClick={handleClickEdit} style={{ marginLeft: '10px' }}>
+          수정
+        </Button>
+        <Button onClick={handleClickDelete} style={{ marginLeft: '10px' }}>
+          삭제
         </Button>
       </Row>
     </Container>
