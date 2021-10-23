@@ -45,16 +45,18 @@ export const postTodo = ({
     });
 };
 
+export type PutTodoPayload = {
+  title: string;
+};
+
 type PutTodoParams = {
   id: number;
-  payload: {
-    title: string;
-  };
+  payload: PutTodoPayload;
   parameters?: {};
   headerParameters?: {};
 };
 
-type PutTodoResponseData = {
+export type PutTodoResponseData = {
   title: string;
 };
 
