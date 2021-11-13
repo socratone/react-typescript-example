@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Axios from './sections/Axios';
 import ReactQuery from './sections/ReactQuery';
 import TypeInheritance from './sections/TypeInheritance';
+import Class from './sections/Class';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();
@@ -21,6 +22,9 @@ function App() {
 
         <SubTitle>React Query</SubTitle>
         <ReactQuery />
+
+        <SubTitle>Class</SubTitle>
+        <Class />
       </Container>
     </QueryClientProvider>
   );
