@@ -6,11 +6,11 @@ type UserItemsProps = {
 
 const UserItems = ({ items }: UserItemsProps) => {
   return (
-    <ul>
+    <div>
       {items.map((item) => (
-        <li key={item.name}>{item.name}</li>
+        <div key={item.name}>{item.name}</div>
       ))}
-    </ul>
+    </div>
   );
 };
 
