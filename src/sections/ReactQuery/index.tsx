@@ -83,8 +83,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid gainsboro;
-  border-radius: 10px;
 `;
 
 const Title = styled.h3``;
