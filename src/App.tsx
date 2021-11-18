@@ -1,8 +1,8 @@
-import Axios from './sections/Axios';
-import ReactQuery from './sections/ReactQuery';
-import TypeInheritance from './sections/TypeInheritance';
-import Class from './sections/Class';
-import Declaration from './sections/Declaration';
+import Axios from './pages/Axios';
+import ReactQuery from './pages/ReactQuery';
+import TypeInheritance from './pages/TypeInheritance';
+import Class from './pages/Class';
+import Declaration from './pages/Declaration';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Routes, Route } from 'react-router-dom';
 import MainNav from './components/layout/MainNav';
