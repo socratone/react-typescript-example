@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Declaration = () => {
-  return <Container>hello world</Container>;
+  return <Container>TODO</Container>;
 };
 
 const Container = styled.div`
